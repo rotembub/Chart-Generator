@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css">
+    <title>Chart-Generator</title>
+</head>
+
+<body onload="onInit()">
+    <section class="header">
+        <h1> <i class="fas fa-chart-line"></i> Chart Generator </h1>
+        <div class="nav-bar">
+            <a href="" onclick="onShowCollection(event)">Collection</a>
+            <a href="" onclick="onShowEditor(event)">Editor</a>
+        </div>
+    </section>
+    <section class="main">
+        <div class="canvas-container">
+            <canvas width="500" height="500" style="border:1px black solid; background-color: white;"></canvas>
+        </div>
+        <div class="control-box">
+            <!-- <div class="text-control-box">
+                <h3>Add A Title</h3>
+                <input class="title-input" name="" type="text" placeholder="Your Title">
+                <button>Add</button>
+            </div> -->
+            <div class="controls">
+                <label for="chart-types"> <i class="fas fa-chart-bar"></i>
+                    <i class="fas fa-chart-area"></i>
+                    <i class="fas fa-chart-pie"></i></label>
+                <select onchange="onChangeChartType(this.value)" name="chart-types" id="chart-types">
+                    <option value="bar">Bars</option>
+                    <option value="pie">Pie</option>
+                    <option value="line">Line</option>
+                    <option value="balloon">Balloons</option>
+                    <option value="area">Area</option>
+                </select>
+                <!-- <button onclick="onDrawCharts()">Draw!</button> -->
+                <button title="Create chart" onclick="animateCharts()"><i class="fas fa-play"></i></button>
+                <button title="Save Chart" onclick="onSaveChart()"><i class="far fa-save"></i></button>
+                <a title="Download picture" href="" onclick="onDownloadChart(this)" download="chart.png"><i
+                        class="fas fa-download"></i></a>
+                <a title="Download video" href="" onclick="onDownloadVid(event)"><i class="fas fa-file-export"></i><i
+                        class="far fa-file-video"></i></a>
+                <a href="" title="Download" onclick="removeLink(this)" class="vid-download hidden" download=""><i
+                        class="fas fa-arrow-alt-circle-down"></i></a>
+                <label title="Upload background" for="file-upload" class="upload-label"><i
+                        class="fas fa-upload"></i></label>
+                <input type="file" id="file-upload" name="file-upload" onchange="onUploadImg(event)" />
+            </div>
+            <div class="data-input">
+                <input class="data-color clr1" oninput="onSetColor(this)" value="#0000FF" id="data-color"
+                    name="data-color" type="color">
+                <label for="data-color"><i class="fas fa-tint"></i></label>
+                <input class="data-name name1" name="" type="text" placeholder="Name">
+                <input class="data-value val1" name="" type="number" placeholder="Value">
+            </div>
+            <div class="data-input">
+                <input class="data-color clr2" oninput="onSetColor(this)" value="#EE775E" id="data-color1"
+                    name="data-color1" type="color">
+                <label for="data-color1"><i class="fas fa-tint"></i></label>
+                <input class="data-name name2" name="" type="text" placeholder="Name">
+                <input class="data-value val2" name="" type="number" placeholder="Value">
+            </div>
+            <div class="data-input hidden">
+                <input class="data-color clr3" oninput="onSetColor(this)" value="#90EE90" id="data-color2"
+                    name="data-color2" type="color">
+                <label for="data-color2"><i class="fas fa-tint"></i></label>
+                <input class="data-name name3" name="" type="text" placeholder="Name">
+                <input class="data-value val3" name="" type="number" placeholder="Value">
+                <button onclick="onRemoveInput(this)">X</button>
+            </div>
+            <div class="data-input hidden">
+                <input class="data-color clr4" oninput="onSetColor(this)" value="#E85EEE" id="data-color3"
+                    name="data-color3" type="color">
+                <label for="data-color3"><i class="fas fa-tint"></i></label>
+                <input class="data-name name4" name="" type="text" placeholder="Name">
+                <input class="data-value val4" name="" type="number" placeholder="Value">
+                <button onclick="onRemoveInput(this)">X</button>
+            </div>
+
+            <button class="add-input-btn" onclick="onAddInput()">+</button>
+
+        </div>
+
+    </section>
+
+    <section class="collection hidden">
+        <h3>Your Charts Collection</h3>
+        <div class="collection-gallery"></div>
+
+    </section>
+
+    <section class="footer">
+        <h1>Coffeerights 2022</h1>
+    </section>
+    <script src="js/util.js"></script>
+    <script src="js/storage.service.js"></script>
+    <script src="js/chart.service.js"></script>
+    <script src="js/controller.js"></script>
+</body>
+
+</html>

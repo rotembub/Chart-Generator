@@ -1,0 +1,175 @@
+*{
+    box-sizing: border-box;
+}
+@font-face {
+    font-family: Poppins;
+    src: url('../fonts/Poppins-Medium.ttf');
+}
+
+html{
+    font-family: Poppins;
+}
+h1,h2,h3,h4,h5,h6,body{
+    margin: 0;
+}
+
+.header, .footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 5vh;
+    background-color: #00bfff;
+    color: white;
+}
+.header{
+    flex-direction: column;
+}
+
+.header a{
+    color: white;
+    text-decoration: none;
+    margin-inline-end: 20px;
+    font-size: 18px;
+    padding: 0 5px;
+}
+
+.header a:hover{
+    color: #00bfff;
+    background-color: white;
+    border-radius: 3em;
+    cursor: pointer;
+    /* text-decoration: underline; */
+}
+
+.nav-bar{
+    margin: auto; 
+}
+
+.main, .collection{
+    display: flex;
+    min-height: 90vh;
+    justify-content: space-around;
+    background-color: #dbd1d1;
+}
+
+.canvas-container, .control-box{
+    margin-top: 100px;
+}
+
+.data-color{
+    visibility: hidden;
+    width: 10px;
+    height: 10px;
+}
+
+.data-input{
+    padding: 5px;
+    border-radius: 3em;
+    min-width: 430px;
+    /* padding-right: 5px;
+    padding-bottom: 5px; */
+}
+.collection{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 15px;
+}
+.collection-gallery{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+.chart-preview{
+    position: relative;
+    width: 300px;
+    height: 300px;
+}
+.chart-preview:hover{
+    cursor: pointer;
+    transform: scale(1.01);
+    border: 3px #00bfff solid;
+    background-color: white;
+}
+.chart-preview img{
+    width: 100%;
+}
+
+.add-input-btn{
+    margin-top: 5px;
+}
+
+#file-upload{
+    display: none;
+}
+
+.upload-label{
+    text-decoration: underline;
+}
+
+.delete-btn{
+    background-color: red;
+    border-color: white;
+    color: white;
+    visibility: hidden;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+.chart-preview:hover .delete-btn{
+    visibility: visible;
+}
+/* button ,.controls .upload-label, .controls a{
+    border: 1px black solid;
+    padding: 3px 5px;
+    text-decoration: none;
+    border-radius: 3em;
+    color: white;
+    background-color: #00bfff;
+} */
+button, .controls .upload-label, .controls a {
+    display: inline-flex;
+    border: 1px black solid;
+    text-decoration: none;
+    border-radius: 3em;
+    color: white;
+    background-color: #00bfff;
+    height: 35px;
+    width: 35px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+button:hover, .fa-tint, .upload-label:hover{
+    cursor: pointer;
+}
+.controls{
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 5px;
+    border-radius: 3em;
+    background-color: white;
+}
+.fa-tint{
+    color: white;
+}
+.controls a.hidden, .hidden{
+    display: none;
+}
+
+@media only screen and (max-width: 950px) {
+    .main{
+        flex-direction: column;
+        align-items: center;
+    }
+    .control-box{
+        margin-top: 10px;
+    }
+}
